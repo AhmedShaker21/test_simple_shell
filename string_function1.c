@@ -7,15 +7,14 @@
 int string_length(char *data)
 {
 	int c = 0;
-	
-	if(data == NULL)
-		return 0;
-	
-	for(c = 0; *data != '\0'; c++)
+
+	if (data == NULL)
+		return (0);
+	for (c = 0; *data != '\0'; c++)
 	{
 		*data++;
 	}
-	return(c);
+	return (c);
 }
 
 /**
@@ -26,15 +25,16 @@ int string_length(char *data)
 
 int string_cmp(const char *str1, const char *str2)
 {
-	while(*str1 != NULL)
+	while (*str1 != NULL)
 	{
-		if(*str2 == '\0')
-			return(1);
-		if(*str2 < *str1)
-			return 1;
-		if(*str1 < *str2)
-			return -1;
-		str1++;str2++;
+		if (*str2 == '\0')
+			return (1);
+		if (*str2 < *str1)
+			return (1);
+		if (*str1 < *str2)
+			return (-1);
+		str1++;
+		str2++;
 	}
 	if (*str2 != '\0')
 		return (-1);
@@ -47,20 +47,20 @@ char *string_start_with(const char *string, const char *word)
 	while (*word)
 		if (*word++ != *string++)
 			return (NULL);
-	return ((char*)string);
+	return ((char *)string);
 }
 
 char *compine_str(char *first_w, char *second_w)
 {
 	char *full_w = first_w;
-	
+
 	while (*first_w)
 		*first_w++;
-	
 	while (*second_w)
 	{
 		*first_w = *second_w;
-		*second_w++;*first_w++;
+		*second_w++;
+		*first_w++;
 	}
 	return (full_w);
 }
