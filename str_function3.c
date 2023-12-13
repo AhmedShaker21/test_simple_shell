@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * custom_strncpy - Copies a portion of the source string
  * @destination: The destination string to be copied to.
